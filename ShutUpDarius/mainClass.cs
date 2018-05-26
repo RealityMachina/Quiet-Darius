@@ -51,11 +51,16 @@ namespace ShutUpDarius
                     {
                         if (curPilot.UnspentXP > __instance.GetLevelCost(source[i] + 1))
                         {
-                            pilotsToTrain++;
+
                             canTrain = true; //exit out of this loop, moves on to next pilot
                         }
                     }
-                };
+                }
+
+                if(canTrain)
+                {
+                    pilotsToTrain++;
+                }
  
             }
             if (pilotsToTrain >= BeQuietDarius.MinPilotReq)
